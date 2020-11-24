@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <!-- explicit Homepage view definition -->
+        <record model="ir.ui.view" id="orient_crm_homepage">
+            <field name="name">Orient CRM Home</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <iframe width="1024" height="612"
+                     src="https://app.powerbi.com/view?r=eyJrIjoiMzgyZmQ5ZDctMDM1Zi00ZTE5LWIyZGQtZmZmYTBmZjI1MGUyIiwidCI6ImZkMGM4OTIwLTkxMDAtNGI0ZC05MDEzLTRlYWJkNmJhYTQ4MiIsImMiOjEwfQ%3D%3D&amp;pageName=ReportSection"
+                    frameborder="0" allowFullScreen="true"></iframe>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- action to the one above -->
+        <record id="orient_homepage_custom_crm_action" model="ir.actions.act_window">
+            <field name="name">Homepage</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_id" ref="orient_crm_homepage"/>
+            <field name="target">inline</field>
+        </record>
+        <!-- Top menu item -->
+        <menuitem
+            id="crm.crm_menu_root"
+            name="CRM"
+            action="orient_homepage_custom_crm_action"/>
+        <!--Child menu items-->
+        <menuitem
+            id="orient_custom_homepage_menu"
+            name="Orient Homepage"
+            parent="crm.crm_menu_sales"
+            action="orient_homepage_custom_crm_action"
+            sequence='0'
+            />
+    </data>
+</odoo>

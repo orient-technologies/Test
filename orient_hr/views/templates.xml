@@ -1,0 +1,112 @@
+<odoo>
+    <data noupdate='false'>
+        <template id="orient_hr.orient_hr_homepage_template" name="HR Dashboard">
+            <!--Assets-->
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+            <!-- include jQuery -->
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <!-- include jQuery UI -->
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <link rel="stylesheet" href="/orient_hr/static/src/css/orient_hr_home.css"></link>
+            <script type='text/javascript' src = '/orient_hr/static/src/js/datepicker.js'></script>
+            <script type ='text/javascript' src="https://use.fontawesome.com/f9a57921de.js"></script>
+            <!--Data-->
+            <div class="row">
+                <div class="column left">
+                    <span t-field="user.partner_id.image_1920"
+                 t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class': 'rounded shadow o_alternative_product o_image_64_max rounded_image' }"/>
+                    <br/>
+                    <br/>
+                    <strong>Welcome,</strong>
+                    <br/>
+                    <strong t-field="user.partner_id.name"/>
+                    <br/>
+                    <br/>
+                    <hr/>
+                    <br/>
+                    <a href="/home/orient-hr" class='navigation_anchor'>
+                        <span class='navigation_links'>
+                            <span style="color: lightgrey;">
+                                <i class="fa fa-home fa-2x"></i>
+                            </span>Home
+                
+                        </span>
+                    </a>
+                    <br/>
+                    <br/>
+                    <a t-att-href="redirect.redirect_to_colleagues()" class='navigation_anchor'>
+                        <span class='navigation_links'>
+                            <span style="color: lightgrey;">
+                                <i class="fa fa-users fa-2x"></i>
+                            </span>Colleagues
+                
+                        </span>
+                    </a>
+                    <br/>
+                    <br/>
+                    <a href="#" class='navigation_anchor'>
+                        <span class='navigation_links'>
+                            <span style="color: lightgrey;">
+                                <i class="fa fa-line-chart fa-2x"></i>
+                            </span>Performance Management
+                    
+                        </span>
+                    </a>
+                    <br/>
+                    <br/>
+                    <a href="#" class='navigation_anchor'>
+                        <span class='navigation_links'>
+                            <span style="color: lightgrey;">
+                                <i class="fa fa-graduation-cap fa-2x"></i>
+                            </span>Training
+                    
+                        </span>
+                    </a>
+                    <br/>
+                    <br/>
+                    <a t-att-href="redirect.redirect_to_attendance()" class='navigation_anchor'>
+                        <span class='navigation_links'>
+                            <span style="color: lightgrey;">
+                                <i class="fa fa-calendar-times-o fa-2x"></i>
+                            </span>Attendance
+                
+                        </span>
+                    </a>
+                </div>
+                <!-- <div class = 'vl_left'/> -->
+                <div class="column middle">
+                    <img src="/orient_hr/static/src/img/orient_logo.png" height='250px' style="
+  margin-left: auto;margin-right: auto;width: 90%;display:inline-block;"></img>
+                    <t t-foreach="all_thoughts" t-as="each_thought">
+                        <div t-field='each_thought.thought_of_day' class='each_thought'/>
+                    </t>
+                </div>
+                <!-- <div class = 'vl_right'/> -->
+                <div class="column right" style="background-color:white;">
+                    <span class='thought_of_the_day' align='right' >
+                        <p align='left'>Thought of the Day:</p>
+                        <p t-field="thought.thought_of_day" style="font-weight:bold;color:#37C1F0;" align='left'/>
+                    </span>
+                    <hr/>
+                    <span align ='right'>
+                        <p align='left'>Calendar</p>
+                    </span>
+                    <span id="Datepicker1" stytruele='padding-right: 25px;margin-right: 25px;'></span>
+                    <br/>
+                    <hr/>
+                    <br/>
+                    <span>
+                        <b>Birthday Wishes -</b>
+                        <br/><br/>
+                        <t t-foreach="birthdays" t-as="birthday">
+                            <span t-field="birthday.image_1920" 
+                 t-options="{'widget': 'image', 'qweb_img_responsive': False, 
+                 'class': 'rounded shadow o_alternative_product o_image_64_max rounded_image birthday_image' }"/>
+                            <p t-field="birthday.name"/>
+                        </t>
+                    </span>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

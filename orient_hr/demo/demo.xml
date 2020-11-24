@@ -1,0 +1,23 @@
+<odoo>
+        <record id="object0" model="thoughts.master">
+            <field name="name">Thought</field>
+            <field name="thought_of_day">Never give up on what you really want to do.</field>
+        </record>
+        <record id="object1" model="thoughts.master">
+            <field name="name">Thought</field>
+            <field name="thought_of_day">If you have good thoughts, they will shine out of your face like sunbeams and you will always look lovely.</field>
+        </record>
+        <record id="object2" model="thoughts.master">
+            <field name="name">Thought</field>
+            <field name="thought_of_day">You’re braver than you believe and stronger than you seem, and smarter than you think</field>
+            <field name="today_thought_bool">1</field>
+        </record>
+        <record id="object3" model="thoughts.master">
+            <field name="name">Thought</field>
+            <field name="thought_of_day">“In any moment of decision, the best thing you can do is the right thing</field>
+        </record>
+        <record id="object4" model="thoughts.master">
+            <field name="name">Thought</field>
+            <field name="thought_of_day">Do your little bit of good where you are; it’s those little bits of good put together that overwhelm the world.</field>
+        </record>
+</odoo>

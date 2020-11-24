@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="orient_hr_thought_of_day_list">
+            <field name="name">orient.hr.thought.of.day.list</field>
+            <field name="model">thoughts.master</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name = 'thought_of_day'/>
+                    <field name = 'today_thought_bool'/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="orient_hr_thought_of_day_form">
+            <field name="name">orient.hr.thought.of.day.form</field>
+            <field name="model">thoughts.master</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name = 'thought_of_day'/>
+                            <field name = 'today_thought_bool'/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="orient_hr_thought_action">
+            <field name="name">Thought of the Day</field>
+            <field name="res_model">thoughts.master</field>
+            <field name="view_id" ref="orient_hr_thought_of_day_list"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_url" id="action_homepage_url">
+            <field name="name">Open Custom Homepage</field>
+            <field name="url">/home/orient-hr</field>
+        </record>
+        <!-- Top menu item -->
+        <menuitem
+            id="hr.menu_hr_root"
+            name="Employees"
+            sequence="75"
+            action = 'action_homepage_url'
+            />
+        <menuitem
+            id = 'thought_of_day_orient_menuitem'
+            parent="hr.menu_human_resources_configuration"
+            name="Thought of the Day"
+            action = 'orient_hr_thought_action'
+            />
+    </data>
+</odoo>
