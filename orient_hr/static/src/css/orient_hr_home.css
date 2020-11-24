@@ -1,0 +1,78 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    padding: 10px;
+    
+  }
+  
+  .left{
+      width:20%
+  }
+  .right {
+    width: 25%;
+  }
+  
+  .middle {
+    width: 55%;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .rounded_image{
+      border-radius:50%;
+      
+  }
+  /* .vl_right {
+    border-left: 1px solid white;
+    height: 200%;
+    position: absolute;
+    left: 74%;
+    margin-left: -3px;
+    top: 0;
+    bottom:0;
+  }
+  
+  .vl_left {
+    border-left: 1px solid white;
+    height: 200%;
+    position: absolute;
+    left: 20%;
+    margin-left: -3px;
+    top: 0;
+    bottom:0;
+  } */
+  .each_thought {
+    background-color: lightgrey;
+    width: 92%;
+    border: 1px solid black;
+    padding: 50px;
+    margin: 20px;
+    border-radius:5%
+  }
+  .birthday_image{
+    display: inline-block;
+    height:60px;
+    width:60px;
+  }
+  .navigation_links:hover{
+    background-color:#37C1F0;
+    display:inline-block;
+    height:60px;
+    width:213px;
+    border-radius:10%;
+  }
+  .navigation_anchor:link, .navigation_anchor:hover, .navigation_anchor:visited, .navigation_anchor:active{
+    color:grey;
+  }
+  a{
+    text-decoration: none;
+  }
+  
